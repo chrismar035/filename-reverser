@@ -50,7 +50,7 @@ func main() {
 		err := os.Rename(originalFile, correctedFile)
 
 		if err != nil {
-			fmt.Println("Coun't rename " + originalFile)
+			fmt.Println("Can't rename " + originalFile)
 			fmt.Println(err)
 		} else {
 			fmt.Println(originalFile + " => " + correctedFile)
