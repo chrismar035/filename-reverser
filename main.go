@@ -37,9 +37,7 @@ func main() {
 		extension := splits[len(splits) - 1]
 		reversedName := ""
 		if len(splits) > 2 {
-			for i := 0; i < len(splits) - 1; i ++ {
-				reversedName = reversedName + splits[i]
-			}
+			reversedName = strings.Join(splits[:len(splits)-1], ".")
 		} else {
 			reversedName = splits[0]
 		}
