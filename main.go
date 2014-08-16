@@ -22,8 +22,6 @@ func main() {
 		targetPath = os.Args[1]
 	}
 
-	fmt.Println("Procesing " + targetPath)
-
 	files, err := ioutil.ReadDir(targetPath)
 	if err != nil {
 		fmt.Println("Unable to read from " + targetPath)
@@ -31,7 +29,6 @@ func main() {
 		return
 	}
 
-	fmt.Println("")
 	for _, file := range files {
 		splits := strings.Split(file.Name(), ".")
 		extension := splits[len(splits) - 1]
@@ -41,9 +38,6 @@ func main() {
 		} else {
 			reversedName = splits[0]
 		}
-
-		fmt.Println(reversedName)
-		fmt.Println(extension)
 
 		correctedName := reverse(reversedName)
 		originalFile := reversedName +  "." + extension
